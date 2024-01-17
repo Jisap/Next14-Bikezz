@@ -30,7 +30,13 @@ export default {
       title: 'Product Images',
       type: 'array',
       of: [{type: 'image'}]
-    }
+    },
+    {
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'category'}}]
+    },
   ]
 
 }
