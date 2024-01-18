@@ -1,8 +1,36 @@
 
+// Se seleccionan todos los docs pertenecientes a product filtrando por category=popular obteniendose sus ids
 
-const PopularBikes = () => {
+import { client } from "@/app/lib/sanity";
+
+// La subconsulta categories filtra los producttos cuyas categorias incluyen el id de la categoria popular
+const  getData = async () => {
+  const query = `
+    *[_type=='product' && references(*[_type=='category' && name=='popular']._id, categories)]{
+    _id,
+      name,
+      description,
+      images,
+      price,
+      price_id,
+      "slug": slug.current,
+      "categories": categories[]->{
+        name
+      }
+  }`;
+  const data = await client.fetch(query);
+  return data
+}
+
+const PopularBikes = async () => {
+
+  const bikes = await getData();
+  console.log(bikes)
+
   return (
-    <div>PopularBikes</div>
+    <div>
+      PopularBikes
+    </div>
   )
 }
 
