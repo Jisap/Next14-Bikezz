@@ -2,6 +2,7 @@
 // Se seleccionan todos los docs pertenecientes a product filtrando por category=popular obteniendose sus ids
 
 import { client } from "@/app/lib/sanity";
+import Link from "next/link";
 
 // La subconsulta categories filtra los producttos cuyas categorias incluyen el id de la categoria popular
 const  getData = async () => {
@@ -25,12 +26,19 @@ const  getData = async () => {
 const PopularBikes = async () => {
 
   const bikes = await getData();
-  console.log(bikes)
+
 
   return (
-    <div>
-      PopularBikes
-    </div>
+    <section className="py-24">
+      <div className="container mx-auto">
+        <h2 className="text-center">Most Popular Bikes</h2>
+        <p className="text-center mb-[30px]">The World's Premiun Brands In One Destination.</p>
+        <div>Carousel</div>
+        <Link href="/our-bikes">
+          <button className="btn btn-accent mx-auto">See all bikes</button>
+        </Link>
+      </div>
+    </section>
   )
 }
 
