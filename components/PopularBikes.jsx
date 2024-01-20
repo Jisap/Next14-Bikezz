@@ -1,14 +1,16 @@
-
-// Se seleccionan todos los docs pertenecientes a product filtrando por category=popular obteniendose sus ids
+"use client"
 
 import { client } from "@/app/lib/sanity";
 import Link from "next/link";
+import PopularBikesCarousel from "./PopularBikesCarousel";
 
-// La subconsulta categories filtra los producttos cuyas categorias incluyen el id de la categoria popular
+// Se seleccionan todos los docs pertenecientes a product filtrando por category=popular obteniendose sus ids
+// La subconsulta categories filtra los productos cuyas categorias incluyen el id de la categoria popular
+
 const  getData = async () => {
   const query = `
     *[_type=='product' && references(*[_type=='category' && name=='popular']._id, categories)]{
-    _id,
+      _id,
       name,
       description,
       images,
@@ -26,14 +28,13 @@ const  getData = async () => {
 const PopularBikes = async () => {
 
   const bikes = await getData();
-
-
+console.log(bikes)
   return (
     <section className="py-24">
       <div className="container mx-auto">
         <h2 className="text-center">Most Popular Bikes</h2>
         <p className="text-center mb-[30px]">The World's Premiun Brands In One Destination.</p>
-        <div>Carousel</div>
+        <PopularBikesCarousel bikes={bikes} />
         <Link href="/our-bikes">
           <button className="btn btn-accent mx-auto">See all bikes</button>
         </Link>
