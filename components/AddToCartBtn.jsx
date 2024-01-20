@@ -1,10 +1,10 @@
 
 
-const AddToCartBtn = () => {
+const AddToCartBtn = ({ btnStyles }) => {
   return (
-    <div className="bg-accent btn">
+    <button className={`${btnStyles}`}>
       AddToCartBtn
-    </div>
+    </button>
   )
 }
 
