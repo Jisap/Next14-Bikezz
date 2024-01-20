@@ -9,9 +9,18 @@ import Bike from './Bike';
 
 const PopularBikesCarousel = ({ bikes }) => {
   return (
-    <Swiper>
+    <Swiper 
+      slidesPerView={1}
+      spaceBetween={30}
+      breakpoints={{
+        640: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        960: { slidesPerView: 3 },
+        1440: { slidesPerView: 4 },
+      }}
+    >
       {bikes.map((bike, index) => {
-        {/* console.log( bike.images[0].asset ) */}
+       
         return (
           <SwiperSlide key={bike._id}>
             <Bike bike={bike} />

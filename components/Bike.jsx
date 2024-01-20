@@ -12,6 +12,7 @@ const Bike = ({ bike }) => {
 
   return (
     <div className="group">
+      
       <div className="border h-[328px] mb-5 p-4 overflow-hidden relative">
         <div className="bg-primary/5 w-full h-full group-hover:bg-primary/10 transition-all duration-300
         flex justify-center items-center"
@@ -40,6 +41,15 @@ const Bike = ({ bike }) => {
           </Link>
         </div>
       </div>
+
+        <h5 className="text-gray-400 font-semibold mb-2">
+          {bike.categories[0].name} bike
+        </h5>
+        <h4 className="mb-1">{bike.name}</h4>
+        <div className="text-lg font-bold text-accent">
+          ${bike.price}
+        </div>
+
     </div>
   )
 }
