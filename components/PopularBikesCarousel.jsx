@@ -11,7 +11,7 @@ const PopularBikesCarousel = ({ bikes }) => {
   return (
     <Swiper>
       {bikes.map((bike, index) => {
-        
+        {/* console.log( bike.images[0].asset ) */}
         return (
           <SwiperSlide key={bike._id}>
             <Bike bike={bike} />

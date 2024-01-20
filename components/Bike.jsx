@@ -8,7 +8,7 @@ import { CgEye, CgShoppingBag } from 'react-icons/cg';
 const Bike = ({ bike }) => {
 
   const popularBikeCat = bike.categories.find((bike) => bike.name === 'popular');
- 
+
   return (
     <div className="group">
       <div className="border h-[328px] mb-5 p-4 overflow-hidden relative">
@@ -16,6 +16,17 @@ const Bike = ({ bike }) => {
         flex justify-center items-center"
         >
           {/* badge */}
+          {popularBikeCat && (
+            <div className="absolute top-8 left-8 bg-accent text-white px-3 text-sm uppercase font-medium">
+              Popular
+            </div>)
+          }
+          <Image 
+            src={urlFor(bike.images[0]).url()} 
+            width={240}
+            height={147}
+            alt=''
+          />
         </div>
       </div>
     </div>

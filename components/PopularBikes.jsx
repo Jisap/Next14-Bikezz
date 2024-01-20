@@ -25,10 +25,10 @@ const  getData = async () => {
   return data
 }
 
-const PopularBikes = async () => {
+const PopularBikes = async() => {
 
   const bikes = await getData();
-console.log(bikes)
+
   return (
     <section className="py-24">
       <div className="container mx-auto">

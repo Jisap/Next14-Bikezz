@@ -26,7 +26,7 @@ export default {
       type: 'string'
     },
     {
-      name: 'Images',
+      name: 'images',
       title: 'Product Images',
       type: 'array',
       of: [{type: 'image'}]
