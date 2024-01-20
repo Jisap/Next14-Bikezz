@@ -4,6 +4,7 @@ import { urlFor } from "@/app/lib/sanity";
 import Image from "next/image"; 
 import Link from "next/link";
 import { CgEye, CgShoppingBag } from 'react-icons/cg';
+import AddToCartBtn from "./AddToCartBtn";
 
 const Bike = ({ bike }) => {
 
@@ -27,6 +28,16 @@ const Bike = ({ bike }) => {
             height={147}
             alt=''
           />
+        </div>
+        {/* btn group */}
+        <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center gap-[10px]
+        opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <AddToCartBtn />
+          <Link href={`/product/${bike.slug}`}>
+            <buton className='btn-icon btn-primary'>
+              <CgEye />
+            </buton>
+          </Link>
         </div>
       </div>
     </div>
