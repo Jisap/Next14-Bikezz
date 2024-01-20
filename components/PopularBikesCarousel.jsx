@@ -18,6 +18,11 @@ const PopularBikesCarousel = ({ bikes }) => {
         960: { slidesPerView: 3 },
         1440: { slidesPerView: 4 },
       }}
+      pagination={{
+        clickable: true,
+      }}
+      modules={[Pagination]}
+      className='popular-bike-slider mb-8'
     >
       {bikes.map((bike, index) => {
        
