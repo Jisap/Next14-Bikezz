@@ -1,5 +1,7 @@
 import { Rajdhani } from 'next/font/google'
 import './globals.css'
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 
 const rajdhani = Rajdhani({ 
   subsets: ['latin'], 
@@ -15,7 +17,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={rajdhani.variable}>{children}</body>
+      <body className={rajdhani.variable}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
