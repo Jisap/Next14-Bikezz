@@ -1,9 +1,14 @@
 
 
-const AddToCartBtn = ({ btnStyles }) => {
+const AddToCartBtn = ({ btnStyles, text, icon }) => {
   return (
     <button className={`${btnStyles}`}>
-      AddToCartBtn
+      <div>
+        {text}
+      </div>
+      <div>
+        {icon}
+      </div>
     </button>
   )
 }
