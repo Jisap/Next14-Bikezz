@@ -21,6 +21,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <div className='h-[2000px]'></div>
       </body>
     </html>
   )
