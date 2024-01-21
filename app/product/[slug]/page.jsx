@@ -56,10 +56,22 @@ const ProductDetails = async({ params }) => {
               />
             </div>
             {/* info */}
-            <div>
-              <div>
-                <PackageCheck />
+            <div className="flex flex-col gap-3">
+              <div className="flex gap-2">
+                <PackageCheck size={20} className="text-accent"/>
                 <p>Free shipping on orders over $130</p>
+              </div>
+              <div className="flex gap-2">
+                <RefreshCw size={20} className="text-accent" />
+                <p>Free return for 30 days</p>
+              </div>
+              <div className="flex gap-2">
+                <PackageCheck size={20} className="text-accent" />
+                <p>The bicycles are partially assembled and benefit from transport insurance.</p>
+              </div>
+              <div className="flex gap-2">
+                <Clock size={20} className="text-accent" />
+                <p>Fast delivery</p>
               </div>
             </div>
           </div>
