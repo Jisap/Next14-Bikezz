@@ -21,7 +21,8 @@ const Header = () => {
           <div className="relative cursor-pointer">
             <CgShoppingBag className="text-[26px]"/>
             <div className="bg-accent w-[18px] h-[18px] absolute -right-1 -bottom-1 rounded-full text-white flex items-center
-            justify-center text-sm font-medium">
+            justify-center text-sm font-medium"
+            >
               3
             </div>
           </div>
