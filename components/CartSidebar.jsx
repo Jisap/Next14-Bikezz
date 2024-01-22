@@ -1,8 +1,18 @@
+"use client"
+
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "./ui/sheet"
+
 
 
 const CartSidebar = () => {
   return (
-    <div>CartSidebar</div>
+    <Sheet>
+      <SheetContent>
+        <SheetHeader>
+          <SheetTitle>My Shopping Cart</SheetTitle>
+        </SheetHeader>
+      </SheetContent>
+    </Sheet>
   )
 }
 
