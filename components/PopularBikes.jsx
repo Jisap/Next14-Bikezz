@@ -1,4 +1,4 @@
-"use client"
+
 
 import { client } from "@/app/lib/sanity";
 import Link from "next/link";

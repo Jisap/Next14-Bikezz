@@ -2,7 +2,8 @@ import { Rajdhani } from 'next/font/google'
 import './globals.css'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import { CartProvider } from 'use-shopping-cart'
+import CartProvider from '../components/CartProvider'
+
 
 const rajdhani = Rajdhani({ 
   subsets: ['latin'], 

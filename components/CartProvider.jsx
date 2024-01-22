@@ -2,14 +2,14 @@
 
 import { CartProvider as CProvider } from "use-shopping-cart"; // Shopping cart state and logic for Stripe checkout
 
-const CarProvider = ({ children }) => {
+const CartProvider = ({ children }) => {
   return (
     <CProvider 
       mode="payment"
       cartMode="client-only"
       stripe=""
-      successUrl="succes"
-      cancelUrl=""
+      successUrl="success"
+      cancelUrl="error"
       language="en-US"
       currency="USD"
       billingAddressCollection={true}
@@ -20,4 +20,4 @@ const CarProvider = ({ children }) => {
   )
 }
 
-export default CarProvider
+export default CartProvider
