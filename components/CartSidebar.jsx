@@ -4,6 +4,8 @@ import { useShoppingCart } from "use-shopping-cart"
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "./ui/sheet"
 import { ScrollArea } from "./ui/scroll-area"
 import CartItem from "./CartItem"
+import CheckoutBtn from "./CheckoutBtn"
+
 
 
 
@@ -14,7 +16,7 @@ const CartSidebar = () => {
     cartDetails,          // Objeto con pares key-value, donde las keys son IDs del producto en el carrito y el value son los details de cada entry
     shouldDisplayCart,    // Boolean 
     handleCartClick,      // Toggles shouldDisplayCart between true and false.
-    totalPrice,
+    totalPrice,           // Precio de todos los ptos del carrito
   } = useShoppingCart()
 
   return (
@@ -32,7 +34,9 @@ const CartSidebar = () => {
         </SheetHeader>
         <>
           {cartCount === 0 
-            ? <div>Your cart is empty</div> 
+            ? <div className="flex flex-col items-center justify-center w-full h-[760px]">
+                <h5 className="text-black/50">Your cart is empty</h5>
+              </div>
             : <ScrollArea className="h-[70vh] xl:h-[74vh] pr-4 mb-4">
               { cartDetails && Object.entries(cartDetails).map(([key, item]) => (
                 <CartItem item={item} key={key} />
@@ -40,6 +44,15 @@ const CartSidebar = () => {
             </ScrollArea>
           }
         </>
+        {cartCount > 0 && (
+          <div>
+            <div className="flex justify-between font-semibold">
+              <div className="uppercase mb-5">Total</div>
+              <div>${totalPrice}</div>
+            </div>
+            <CheckoutBtn />
+          </div>
+        )}
       </SheetContent>
     </Sheet>
   )

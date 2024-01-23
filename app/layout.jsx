@@ -3,6 +3,7 @@ import './globals.css'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import CartProvider from '../components/CartProvider'
+import { Toaster } from '@/components/ui/toaster'
 
 
 const rajdhani = Rajdhani({ 
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
         <CartProvider>
           <Header />
           {children}
+          <Toaster />
           <Footer />
         </CartProvider>
         <div className='h-[2000px]'></div>

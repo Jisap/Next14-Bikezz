@@ -1,11 +1,13 @@
 "use client"
 
 import { useShoppingCart } from "use-shopping-cart"
+import { useToast } from "./ui/use-toast";
 
 
 const AddToCartBtn = ({ btnStyles, text, icon, id, currency, name, description, images, price }) => {
 
   const { addItem } = useShoppingCart();
+  const { toast } = useToast();
 
   const bike = {
     id: id,
@@ -19,7 +21,13 @@ const AddToCartBtn = ({ btnStyles, text, icon, id, currency, name, description, 
   return (
     <button 
       className={`${btnStyles}`}
-      onClick={() => addItem(bike)}  
+      onClick={
+        () => {
+          addItem(bike)
+          toast({
+          title: `${name} has been added to the cart.`
+        })
+      }}  
     >
       <div>
         {text}
