@@ -27,6 +27,6 @@ const Nav = ({ containerStyles }) => {
       })}
     </nav>
   )
-}
+};
 
 export default Nav
