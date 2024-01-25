@@ -1,8 +1,24 @@
+'use client'
 
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 
-const Nav = () => {
+const links = [
+  {name: 'Home', path: '/'},
+  {name: 'Our Bikes', path: '/our-bikes'},
+]
+
+const Nav = ({ containerStyles }) => {
   return (
-    <div>Nav</div>
+    <nav className={`${containerStyles}`}>
+      {links.map((link, index) => {
+        return (
+          <Link href={link.path} key={index}>
+            {link.name}
+          </Link>
+        )
+      })}
+    </nav>
   )
 }
 
