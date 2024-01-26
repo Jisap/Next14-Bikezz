@@ -17,6 +17,12 @@ const Footer = () => {
               </p>
             </div>
             {/* form */}
+            <form className="flex flex-col xl:flex-row w-full max-w-[720px] mx-auto gap-5">
+              <Input 
+                placeholder="Your email address"
+              />
+              <button className="btn w-full xl:max-w-[150px] h-[60px] btn-accent">Join</button>
+            </form>
           </div>
         </div>
         {/* copyright */}
