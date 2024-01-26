@@ -70,12 +70,14 @@ const BikeCategories = ({ bikes }) => {
               <div className='text-lg mb-4 font-medium'>
                 Max Price: <span className='text-accent font-semibold ml-2'>${price}</span>
                 <span className='ml-2'>
-                  {filteredBikes.length > 1 
-                    ? `${filteredBikes.length} items`
-                    : filteredBikes === 0 
+                  (
+                    {filteredBikes.length > 1 
                       ? `${filteredBikes.length} items`
-                      : `${filteredBikes.length} item` 
-                  }
+                      : filteredBikes === 0 
+                        ? `${filteredBikes.length} items`
+                        : `${filteredBikes.length} item` 
+                    }
+                  )
                 </span>
               </div>
               <Slider 
